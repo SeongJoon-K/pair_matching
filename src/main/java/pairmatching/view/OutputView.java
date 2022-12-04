@@ -1,5 +1,8 @@
 package pairmatching.view;
 
+import java.io.IOException;
+import java.util.List;
+
 public class OutputView {
 
     private OutputView() {
@@ -26,6 +29,20 @@ public class OutputView {
                 "############################################\n" +
                 "과정, 레벨, 미션을 선택하세요.\n" +
                 "ex) 백엔드, 레벨1, 자동차경주");
+    }
+    private static void printMatchingResultMsg() {
+        System.out.println("페어 매칭 결과입니다.");
+    }
+    public static void printShuffleCrew(List<String> crewNames) throws IOException {
+        printMatchingResultMsg();
+        for (int i = 0; i < crewNames.size(); i++) {
+            if (crewNames.size() % 2 != 0 && i == crewNames.size() - 3) {
+                System.out.println(crewNames.get(i) + " : " + crewNames.get(i+1) + " : " + crewNames.get(i+2));
+                break;
+            }
+            System.out.println(crewNames.get(i) + " : " + crewNames.get(i+1));
+            i++;
+        }
     }
 
 }
