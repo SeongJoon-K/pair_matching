@@ -15,7 +15,7 @@ public enum Level {
         this.levelName = levelName;
     }
 
-    public static Level ofLevel(String levelInput) {
+    public static Level oFLevel(String levelInput) {
         return Arrays.stream(values())
                 .filter(level -> levelInput.equals(level.levelName))
                 .findFirst()
